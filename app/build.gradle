@@ -1,0 +1,64 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.gma.qpmini"
+        minSdk 24
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    viewBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+
+    implementation "androidx.core:core-ktx:$core_ktx"
+    implementation "androidx.appcompat:appcompat:$appcompat"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout"
+    implementation "com.google.android.material:material:$material"
+    implementation "com.squareup.picasso:picasso:$picasso"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$livedata"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$livedata"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$livedata"
+    // KOIN
+    api "io.insert-koin:koin-android:$koin"
+    testImplementation "io.insert-koin:koin-test:$koin"
+    // ROOM
+    api "androidx.room:room-runtime:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+
+    // KTOR
+    implementation "io.ktor:ktor-client-android:$ktor"
+    implementation "io.ktor:ktor-client-core:$ktor"
+    implementation "io.ktor:ktor-client-serialization:$ktor"
+    implementation "io.ktor:ktor-client-gson:$ktor"
+
+    testImplementation "junit:junit:$junit"
+    androidTestImplementation "androidx.test.ext:junit:$ext_junit"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
+}
