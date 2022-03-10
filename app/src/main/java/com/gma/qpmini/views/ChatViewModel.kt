@@ -1,6 +1,5 @@
 package com.gma.qpmini.views
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.gma.qpmini.messages.model.Messages
