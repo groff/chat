@@ -10,13 +10,13 @@ abstract class MessageViewHolder<in T>(itemView: ViewBinding) : RecyclerView.Vie
     abstract fun bind(item: T)
 }
 
-class CurrentUserViewHolder(val vb: MessageCurrentUserBinding) : MessageViewHolder<Messages>(vb) {
+class CurrentUserViewHolder(private val vb: MessageCurrentUserBinding) : MessageViewHolder<Messages>(vb) {
     override fun bind(item: Messages) {
         vb.message.text = item.body
     }
 }
 
-class ParticipantViewHolder(val vb: MessageParticipantBinding) : MessageViewHolder<Messages>(vb) {
+class ParticipantViewHolder(private val vb: MessageParticipantBinding) : MessageViewHolder<Messages>(vb) {
     override fun bind(item: Messages) {
         vb.message.text = item.body
     }

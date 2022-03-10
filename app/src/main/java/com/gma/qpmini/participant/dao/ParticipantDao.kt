@@ -1,6 +1,5 @@
 package com.gma.qpmini.participant.dao
 
-import androidx.lifecycle.LiveData
 import androidx.room.*
 import androidx.room.OnConflictStrategy.REPLACE
 import com.gma.qpmini.participant.model.Participant

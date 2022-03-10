@@ -1,6 +1,5 @@
 package com.gma.qpmini.participant.repository
 
-import com.gma.qpmini.api.ChatClient
 import com.gma.qpmini.common.Repository
 import com.gma.qpmini.participant.dao.ParticipantDao
 import com.gma.qpmini.participant.model.Participant
