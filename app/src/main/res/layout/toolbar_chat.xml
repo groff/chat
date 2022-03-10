@@ -9,6 +9,7 @@
         android:id="@+id/userIcon"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:padding="2dp"
         android:src="@mipmap/ic_launcher"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -16,6 +17,7 @@
 
     <TextView
         android:id="@+id/name"
+        style="@style/TextAppearance.AppCompat.Medium.Inverse"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

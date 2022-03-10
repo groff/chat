@@ -45,6 +45,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
         android:hint="@string/message"
+        android:imeOptions="actionSend"
         android:importantForAutofill="no"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"

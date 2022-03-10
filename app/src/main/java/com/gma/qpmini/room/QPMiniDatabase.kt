@@ -7,7 +7,7 @@ import com.gma.qpmini.messages.model.Messages
 import com.gma.qpmini.participant.model.Participant
 import com.gma.qpmini.participant.dao.ParticipantDao
 
-const val DATABASE_VERSION = 2
+const val DATABASE_VERSION = 3
 const val DATABASE_NAME = "qp.mini.chat"
 
 @Database(

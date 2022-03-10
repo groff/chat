@@ -1,11 +1,9 @@
 package com.gma.qpmini.messages.repository
 
-import com.gma.qpmini.api.ChatClient
+import com.gma.qpmini.common.Repository
 import com.gma.qpmini.messages.dao.MessagesDao
 
-class MessagesRepository(private val dao: MessagesDao) {
-
-    private val client = ChatClient()
+class MessagesRepository(private val dao: MessagesDao) : Repository() {
 
     /**
      *    TODO

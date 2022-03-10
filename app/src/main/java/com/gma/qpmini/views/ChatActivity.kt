@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.gma.qpmini.databinding.ActivityChatBinding
+import com.gma.qpmini.views.adapter.ChatListAdapter
 import com.squareup.picasso.Picasso
 
 class ChatActivity : AppCompatActivity() {
@@ -13,12 +14,13 @@ class ChatActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityChatBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         setSupportActionBar(binding.toolbar)
 
         loadView()
+        initChatList()
     }
 
     private fun loadView() {
@@ -31,6 +33,15 @@ class ChatActivity : AppCompatActivity() {
         binding.send.setOnClickListener {
             viewModel.send(binding.message.text.toString())
             cleanText()
+        }
+    }
+
+    private fun initChatList() {
+        val adapter = ChatListAdapter(mutableListOf())
+        adapter.data = viewModel.messages
+
+        viewModel.onMessageAdded.observe(this) { position ->
+            adapter.notifyItemInserted(position)
         }
     }
 

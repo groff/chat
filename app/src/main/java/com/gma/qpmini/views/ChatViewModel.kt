@@ -1,6 +1,9 @@
 package com.gma.qpmini.views
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.gma.qpmini.messages.model.Messages
 import com.gma.qpmini.messages.repository.MessagesRepository
 import com.gma.qpmini.participant.model.Participant
 import com.gma.qpmini.participant.repository.ParticipantRepository
@@ -24,6 +27,9 @@ class ChatViewModel : ViewModel() {
      *    - Receive POST response and inform list adapter
      *    - Change this to livedata
      */
+    var messages = mutableListOf<Messages>()
+    var onMessageAdded = MutableLiveData<Int>()
+
     fun send(message: String) = runBlocking {
         launch {
             messagesRepo.sendMessage(participantId = PARTICIPANT_ID, message = message)
