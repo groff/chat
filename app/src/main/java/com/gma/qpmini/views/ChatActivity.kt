@@ -4,8 +4,10 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.gma.qpmini.databinding.ActivityChatBinding
+import com.gma.qpmini.messages.model.Messages
 import com.gma.qpmini.views.adapter.ChatListAdapter
 import com.squareup.picasso.Picasso
+import java.util.*
 
 class ChatActivity : AppCompatActivity() {
 
@@ -31,21 +33,24 @@ class ChatActivity : AppCompatActivity() {
             .into(binding.toolbarChat.userIcon)
 
         binding.send.setOnClickListener {
-            viewModel.send(binding.message.text.toString())
+            val currentUserMessage = Messages(
+                id = UUID.randomUUID().toString(),
+                body = binding.message.text.toString()
+            )
+            viewModel.send(currentUserMessage)
             cleanText()
         }
     }
 
     private fun initChatList() {
-        val adapter = ChatListAdapter(mutableListOf())
-        adapter.data = viewModel.messages
-
+        binding.chatList.adapter = ChatListAdapter(viewModel.messages)
         viewModel.onMessageAdded.observe(this) { position ->
-            adapter.notifyItemInserted(position)
+            (binding.chatList.adapter as ChatListAdapter).notifyItemInserted(position)
+            binding.chatList.smoothScrollToPosition(position)
         }
     }
 
     private fun cleanText() {
-        binding.message.setText("")
+        binding.message.text.clear()
     }
 }

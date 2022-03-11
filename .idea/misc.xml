@@ -5,9 +5,12 @@
       <map>
         <entry key="..\:/Users/ernan/AndroidStudioProjects/QPMini/app/src/main/res/drawable/image_circle.xml" value="0.5065" />
         <entry key="..\:/Users/ernan/AndroidStudioProjects/QPMini/app/src/main/res/drawable/participant_photo_circle.xml" value="0.5065" />
+        <entry key="..\:/Users/ernan/AndroidStudioProjects/QPMini/app/src/main/res/drawable/speech_bubble_current_user.xml" value="0.317" />
+        <entry key="..\:/Users/ernan/AndroidStudioProjects/QPMini/app/src/main/res/drawable/speech_bubble_participant.xml" value="0.317" />
+        <entry key="..\:/Users/ernan/AndroidStudioProjects/QPMini/app/src/main/res/drawable/speech_buble_current_user.xml" value="0.317" />
         <entry key="..\:/Users/ernan/AndroidStudioProjects/QPMini/app/src/main/res/layout/activity_chat.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/ernan/AndroidStudioProjects/QPMini/app/src/main/res/layout/message_current_user.xml" value="0.5541666666666667" />
-        <entry key="..\:/Users/ernan/AndroidStudioProjects/QPMini/app/src/main/res/layout/message_participant.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/ernan/AndroidStudioProjects/QPMini/app/src/main/res/layout/message_participant.xml" value="0.5" />
         <entry key="..\:/Users/ernan/AndroidStudioProjects/QPMini/app/src/main/res/layout/toolbar_chat.xml" value="0.5541666666666667" />
       </map>
     </option>
